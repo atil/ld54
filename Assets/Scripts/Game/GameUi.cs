@@ -1,5 +1,4 @@
 ﻿using JamKit;
-using UnityEngine;
 
 namespace Game
 {
