@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TheLevelData
   m_EditorClassIdentifier: 
   _levelName: The Vandermere Museum
-  _backpackCapacity: 10
-  _moneyGoal: 100
+  _backpackCapacity: 25
+  _moneyGoal: 82
   _timeLimit: 60
   _rooms:
   - _name: Grand Entrance Hall
