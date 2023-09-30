@@ -65,6 +65,12 @@ namespace Game
         {
             _currentLevelIndex = PlayerPrefs.GetInt("ld54_currentlevelindex", 0);
 
+            if (_currentLevelIndex >= _allLevels.Levels.Count)
+            {
+                Debug.LogError($"Current level index was erroneous ({_currentLevelIndex}), assigned zero");
+                _currentLevelIndex = 0;
+            }
+
             foreach (Room room in CurrentLevelRooms)
             {
                 _currentLevelCards.Add(new List<CardData>(room.Cards));
