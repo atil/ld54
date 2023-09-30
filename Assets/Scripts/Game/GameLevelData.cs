@@ -9,8 +9,8 @@ namespace Game
         [SerializeField] private string _name;
         public string Name => _name;
 
-        [SerializeField] private Sprite _visual;
-        public Sprite Visual => _visual;
+        [SerializeField] private Sprite _artwork;
+        public Sprite Artwork => _artwork;
 
         [SerializeField] private int _weight;
         public int Weight => _weight;

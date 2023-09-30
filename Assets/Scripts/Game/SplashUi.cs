@@ -8,6 +8,7 @@ namespace Game
     public class SplashUi : UiBase
     {
         [SerializeField] private Button _playButton;
+        [SerializeField] private GameLevels _allLevels;
 
         void Start()
         {

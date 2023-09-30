@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b53a3c515bed44c877a7279762ba16, type: 3}
   m_Name: TheLevelData
   m_EditorClassIdentifier: 
-  _levelName: 
+  _levelName: Test level
   _backpackCapacity: 10
   _moneyGoal: 100
   _timeLimit: 60
@@ -21,32 +21,47 @@ MonoBehaviour:
     _background: {fileID: 0}
     _cards:
     - _name: ItemA1
-      _visual: {fileID: 0}
+      _artwork: {fileID: 0}
       _weight: 3
       _money: 3
     - _name: ItemA2
-      _visual: {fileID: 0}
+      _artwork: {fileID: 0}
       _weight: 3
       _money: 3
   - _name: RoomB
     _background: {fileID: 0}
     _cards:
     - _name: ItemB1
-      _visual: {fileID: 0}
+      _artwork: {fileID: 0}
       _weight: 5
       _money: 5
     - _name: ItemB2
-      _visual: {fileID: 0}
+      _artwork: {fileID: 0}
       _weight: 5
       _money: 5
   - _name: RoomC
     _background: {fileID: 0}
     _cards:
     - _name: ItemC1
-      _visual: {fileID: 0}
+      _artwork: {fileID: 0}
       _weight: 7
       _money: 7
     - _name: ItemC2
-      _visual: {fileID: 0}
+      _artwork: {fileID: 0}
+      _weight: 7
+      _money: 7
+  - _name: RoomD
+    _background: {fileID: 0}
+    _cards:
+    - _name: ItemD1
+      _artwork: {fileID: 0}
+      _weight: 7
+      _money: 7
+    - _name: ItemD2
+      _artwork: {fileID: 0}
+      _weight: 7
+      _money: 7
+    - _name: ItemD3
+      _artwork: {fileID: 0}
       _weight: 7
       _money: 7

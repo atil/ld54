@@ -8,5 +8,10 @@ namespace Game
         {
             FadeIn();
         }
+
+        public void FadeOut()
+        {
+            base.FadeOut();
+        }
     }
 }

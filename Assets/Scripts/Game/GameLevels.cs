@@ -8,5 +8,19 @@ namespace Game
     {
         [SerializeField] private List<GameLevelData> _levels;
         public List<GameLevelData> Levels => _levels;
+
+        [Header("Intermission texts")]
+        [SerializeField, TextArea(2, 10)] private string _levelSuccesText;
+        public string LevelSuccessText => _levelSuccesText;
+
+        [SerializeField, TextArea(2, 10)] private string _levelFailUndervalueText;
+        public string LevelFailUndervalueText => _levelFailUndervalueText;
+
+        [SerializeField, TextArea(2, 10)] private string _levelFailPoliceText;
+        public string LevelFailPoliceText => _levelFailPoliceText;
+
+        [SerializeField, TextArea(2, 10)] private string _gameWinText;
+        public string GameWinText => _gameWinText;
+
     }
 }

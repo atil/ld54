@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Game
 {
@@ -9,6 +10,7 @@ namespace Game
         [SerializeField] private TextMeshProUGUI _nameText; 
         [SerializeField] private TextMeshProUGUI _weightText; 
         [SerializeField] private TextMeshProUGUI _moneyText;
+        [SerializeField] private Image _artwork;
 
         public CardData Card { get; private set; }
 
@@ -17,7 +19,7 @@ namespace Game
             Card = card;
             _nameText.text = card.Name;
             _weightText.text = $"{card.Weight}kg";
-            _moneyText.text = $"{card.Money}$";
+            _moneyText.text = $"{card.Money}";
         }
 
         public void OnPointerClick(PointerEventData eventData)

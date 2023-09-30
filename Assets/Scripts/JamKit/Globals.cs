@@ -40,5 +40,6 @@ namespace JamKit
         [Header("Build")]
         [SerializeField] private Color _buildSplashBackgroundColor;
         public Color BuildSplashBackgroundColor => _buildSplashBackgroundColor;
+
     }
 }
