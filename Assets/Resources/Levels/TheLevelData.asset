@@ -12,56 +12,88 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b53a3c515bed44c877a7279762ba16, type: 3}
   m_Name: TheLevelData
   m_EditorClassIdentifier: 
-  _levelName: Test level
+  _levelName: The Vandermere Museum
   _backpackCapacity: 10
   _moneyGoal: 100
   _timeLimit: 60
   _rooms:
-  - _name: RoomA
+  - _name: Grand Entrance Hall
     _background: {fileID: 0}
     _cards:
-    - _name: ItemA1
+    - _name: Priceless Statue
+      _artwork: {fileID: 0}
+      _weight: 2
+      _money: 10
+    - _name: Gem-Encrusted Crown
       _artwork: {fileID: 0}
       _weight: 3
-      _money: 3
-    - _name: ItemA2
+      _money: 12
+    - _name: Antique Tapestry
+      _artwork: {fileID: 0}
+      _weight: 6
+      _money: 10
+    - _name: Antique Pocket Watch
+      _artwork: {fileID: 0}
+      _weight: 6
+      _money: 10
+    - _name: Crystal Vase
       _artwork: {fileID: 0}
       _weight: 3
+      _money: 8
+  - _name: Egyptian Exhibit
+    _background: {fileID: 0}
+    _cards:
+    - _name: Ancient Sarcophagus
+      _artwork: {fileID: 0}
+      _weight: 12
+      _money: 30
+    - _name: Rare Hieroglyphics Tablet
+      _artwork: {fileID: 0}
+      _weight: 3
+      _money: 7
+    - _name: Golden Ankh
+      _artwork: {fileID: 0}
+      _weight: 2
+      _money: 9
+  - _name: Renaissance Art Gallery
+    _background: {fileID: 0}
+    _cards:
+    - _name: Masterpiece Painting
+      _artwork: {fileID: 0}
+      _weight: 6
+      _money: 18
+    - _name: Ornate Gilded Frame
+      _artwork: {fileID: 0}
+      _weight: 5
+      _money: 15
+    - _name: Sculpted Marble Bust
+      _artwork: {fileID: 0}
+      _weight: 4
+      _money: 14
+    - _name: Exquisite Crystal Chandelier
+      _artwork: {fileID: 0}
+      _weight: 7
+      _money: 21
+    - _name: Antique Coin
+      _artwork: {fileID: 0}
+      _weight: 1
       _money: 3
-  - _name: RoomB
+  - _name: Scientific Discovery Wing
     _background: {fileID: 0}
     _cards:
-    - _name: ItemB1
+    - _name: Leonardo's Notebook
       _artwork: {fileID: 0}
-      _weight: 5
+      _weight: 1
+      _money: 4
+    - _name: Vintage Astronomical Globe
+      _artwork: {fileID: 0}
+      _weight: 2
       _money: 5
-    - _name: ItemB2
+    - _name: Antique Microscope
       _artwork: {fileID: 0}
-      _weight: 5
+      _weight: 2
+      _money: 4
+    - _name: Vintage Teapot
+      _artwork: {fileID: 0}
+      _weight: 2
       _money: 5
-  - _name: RoomC
-    _background: {fileID: 0}
-    _cards:
-    - _name: ItemC1
-      _artwork: {fileID: 0}
-      _weight: 7
-      _money: 7
-    - _name: ItemC2
-      _artwork: {fileID: 0}
-      _weight: 7
-      _money: 7
-  - _name: RoomD
-    _background: {fileID: 0}
-    _cards:
-    - _name: ItemD1
-      _artwork: {fileID: 0}
-      _weight: 7
-      _money: 7
-    - _name: ItemD2
-      _artwork: {fileID: 0}
-      _weight: 7
-      _money: 7
-    - _name: ItemD3
-      _artwork: {fileID: 0}
-      _weight: 7
-      _money: 7
