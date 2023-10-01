@@ -45,7 +45,7 @@ namespace JamKit
                 return;
             }
 
-            const string projectName = "lorem ipsum"; // Set this when you open a project in itch
+            const string projectName = "museum-heist";
             // Also make sure that "data caching" is off and "compression format" is gzip in publishing settings
 
             Globals globals = Resources.Load<Globals>("Globals");
@@ -59,7 +59,7 @@ namespace JamKit
             Process zipProcess = Process.Start("7z.exe", "a WebGL.zip ./Build/WebGL/* -r");
             zipProcess.WaitForExit();
             UnityEngine.Debug.Log("Zipped build, proceeding with upload");
-            Process butlerProcess = Process.Start("butler.exe", $"push WebGL.zip torrenglabs/{projectName}:win");
+            Process butlerProcess = Process.Start("butler.exe", $"push WebGL.zip pingfromheaven/{projectName}:html5");
             butlerProcess.WaitForExit();
             if (butlerProcess.ExitCode == 0)
             {

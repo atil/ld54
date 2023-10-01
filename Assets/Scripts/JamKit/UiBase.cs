@@ -12,6 +12,7 @@ namespace JamKit
         }
 
         [SerializeField] private JamKit _jamKit;
+        protected JamKit JamKit => _jamKit;
 
         protected Globals Globals => _jamKit.Globals;
 
