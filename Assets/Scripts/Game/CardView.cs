@@ -19,7 +19,7 @@ namespace Game
             Card = card;
             _nameText.text = card.Name;
             _weightText.text = $"{card.Weight}kg";
-            _moneyText.text = $"{card.Money} gold";
+            _moneyText.text = $"{card.Money}";
         }
 
         public void OnPointerClick(PointerEventData eventData)
