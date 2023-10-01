@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e423822b6967c845b8d1350a97ce6b1, type: 3}
   m_Name: Globals
   m_EditorClassIdentifier: 
-  _discreteTickInteval: 0.2
+  _discreteTickInteval: 0.05
   _sceneTransitionParams:
     _Color: {r: 0.47058824, g: 0.47058824, b: 0.47058824, a: 1}
     _Duration: 1

@@ -25,6 +25,8 @@ namespace Game
         [Header("UI")]
         [SerializeField] private GameObject _cardPrefab;
         [SerializeField] private Image _roomBackground;
+        [SerializeField] private Transform _roomBackgrounLerpTargetLeft;
+        [SerializeField] private Transform _roomBackgrounLerpTargetRight;
         [SerializeField] private TextMeshProUGUI _levelNameText;
         [SerializeField] private TextMeshProUGUI _roomNameText;
         [SerializeField] private Transform _roomCardsRoot;
@@ -63,6 +65,7 @@ namespace Game
 
         private bool _isShowingTooHeavy = false;
         private bool _isGameRunning = true;
+        private const float RoomChangeDuration = 0.5f;
 
         private void Start()
         {
@@ -161,11 +164,13 @@ namespace Game
                 return;
             }
 
+            PlayRoomChangeAnimation(_roomBackgrounLerpTargetRight, _roomBackgrounLerpTargetLeft);
+
             _roomNameText.gameObject.SetActive(false);
             _roomCardsRoot.gameObject.SetActive(false);
             _prevRoomButton.gameObject.SetActive(false);
             _nextRoomButton.gameObject.SetActive(false);
-            _jamkit.RunDelayed(0.5f, () =>
+            _jamkit.RunDelayed(RoomChangeDuration, () =>
             {
                 _roomNameText.gameObject.SetActive(true);
                 _roomCardsRoot.gameObject.SetActive(true);
@@ -179,6 +184,8 @@ namespace Game
 
         public void OnNextRoomClicked()
         {
+            PlayRoomChangeAnimation(_roomBackgrounLerpTargetLeft, _roomBackgrounLerpTargetRight);
+
             _roomNameText.gameObject.SetActive(false);
             _roomCardsRoot.gameObject.SetActive(false);
             _prevRoomButton.gameObject.SetActive(false);
@@ -193,6 +200,35 @@ namespace Game
                 _currentRoomIndex++;
                 SetWithRoom(_currentRoomIndex);
             });
+        }
+
+        private void PlayRoomChangeAnimation(Transform firstTip, Transform secondTip)
+        {
+            Vector3 mid = _roomBackground.transform.position;
+            Vector3 src = mid;
+            Vector3 target = firstTip.position;
+            _roomBackground.CrossFadeAlpha(0, RoomChangeDuration / 2.0f, false);
+            _jamkit.TweenDiscrete(AnimationCurve.EaseInOut(0, 0, 1, 1), RoomChangeDuration / 2.0f, _jamkit.Globals.DiscreteTickInterval,
+                t =>
+                {
+                    _roomBackground.transform.position = Vector3.Lerp(src, target, t);
+                },
+                () =>
+                {
+                    _roomBackground.CrossFadeAlpha(1, RoomChangeDuration / 2.0f, false);
+                    src = secondTip.position;
+                    target = mid;
+                    _jamkit.TweenDiscrete(AnimationCurve.EaseInOut(0, 0, 1, 1), RoomChangeDuration / 2.0f, _jamkit.Globals.DiscreteTickInterval,
+                        t =>
+                        {
+                            _roomBackground.transform.position = Vector3.Lerp(src, target, t);
+                        },
+                        () =>
+                        {
+                            _roomBackground.transform.position = mid;
+                        });
+                });
+
         }
 
         public void OnCardClicked(CardData card)
