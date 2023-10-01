@@ -24,6 +24,7 @@ namespace Game
 
         [Header("UI")]
         [SerializeField] private GameObject _cardPrefab;
+        [SerializeField] private Image _roomBackground;
         [SerializeField] private TextMeshProUGUI _levelNameText;
         [SerializeField] private TextMeshProUGUI _roomNameText;
         [SerializeField] private Transform _roomCardsRoot;
@@ -128,6 +129,7 @@ namespace Game
         private void SetWithRoom(int roomIndex)
         {
             Room newRoom = CurrentLevelRooms[roomIndex];
+            _roomBackground.sprite = newRoom.Background;
             _roomNameText.text = newRoom.Name;
             _prevRoomText.text = _currentRoomIndex == 0 ? "Exit" : CurrentLevelRooms[_currentRoomIndex - 1].Name;
             _nextRoomText.text = _currentRoomIndex == CurrentLevelRooms.Count - 1 ? "" : CurrentLevelRooms[_currentRoomIndex + 1].Name;
@@ -248,7 +250,7 @@ namespace Game
             invisibleCard.transform.SetAsLastSibling();
             clickedCardView.transform.SetParent(_ui.transform);
 
-            _jamkit.RunDelayed(0.001f, () =>
+            _jamkit.RunDelayed(0.001f, () => // Wait for a frame to let layout to correct invisible card's position
             {
                 Vector3 src = clickedCardView.transform.position;
                 Vector3 target = invisibleCard.transform.position;

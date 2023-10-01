@@ -14,8 +14,11 @@ namespace Game
 
         public CardData Card { get; private set; }
 
+        private GameMain _game;
+
         public void Set(CardData card)
         {
+            _game = FindObjectOfType<GameMain>();
             Card = card;
             _nameText.text = card.Name;
             _weightText.text = $"{card.Weight}kg";
@@ -24,17 +27,17 @@ namespace Game
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            FindObjectOfType<GameMain>().OnCardClicked(Card);
+            _game.OnCardClicked(Card);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            FindObjectOfType<GameMain>().OnCardPointerEnter(Card);
+            _game.OnCardPointerEnter(Card);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            FindObjectOfType<GameMain>().OnCardPointerExit(Card);
+            _game.OnCardPointerExit(Card);
         }
 
     }
