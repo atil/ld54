@@ -15,6 +15,6 @@ MonoBehaviour:
   _levels:
   - {fileID: 11400000, guid: ad7438ca2fba5a24faf1c388cf2eb162, type: 2}
   _levelSuccesText: level success.
-  _levelFailUndervalueText: fakir amk.
-  _levelFailPoliceText: yakalandik.
-  _gameWinText: all levels done. ggs.
+  _levelFailUndervalueText: THAT MUCH? WHY NOT JUST BUY A TICKET AND VISIT?
+  _levelFailPoliceText: 'POLICE: <i>YOU''RE UNDER ARREST</i>'
+  _gameWinText: THAT'S HOW YOU DO IT

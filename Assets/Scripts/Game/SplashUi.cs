@@ -16,12 +16,14 @@ namespace Game
         [SerializeField] private TextMeshProUGUI _storyText;
         [SerializeField] private Button _clickToProceedButton;
 
+        private Coroutine _showTextCoroutine;
+
         private enum SplashState
         {
             Splash,
             Story
         }
-        //private SplashState _state = SplashState.Splash;
+        private SplashState _state = SplashState.Splash;
         private string[] _storyLines;
 
         void Start()
@@ -35,7 +37,7 @@ namespace Game
             _playButton.interactable = false;
             FadeOut(null, () =>
             {
-                //_state = SplashState.Story;
+                _state = SplashState.Story;
                 _splashItself.SetActive(false);
                 _storyRoot.SetActive(true);
                 _storyLines = _storyText.text.Split('\n');
@@ -46,7 +48,7 @@ namespace Game
 
         private void ShowStoryText()
         {
-            JamKit.Run(ShowStoryTextCoroutine());
+            _showTextCoroutine = JamKit.Run(ShowStoryTextCoroutine());
         }
 
         private IEnumerator ShowStoryTextCoroutine()
@@ -79,5 +81,13 @@ namespace Game
             FadeOut(null, () => SceneManager.LoadScene("Game"));
         }
 
+        public void Update()
+        {
+            if (_state == SplashState.Story && Input.anyKeyDown)
+            {
+                JamKit.Stop(_showTextCoroutine);
+                OnClickedProceedButton();
+            }
+        }
     }
 }
