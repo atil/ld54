@@ -134,7 +134,7 @@ namespace Game
             Room newRoom = CurrentLevelRooms[roomIndex];
             _roomBackground.sprite = newRoom.Background;
             _roomNameText.text = newRoom.Name;
-            _prevRoomText.text = _currentRoomIndex == 0 ? "Exit" : CurrentLevelRooms[_currentRoomIndex - 1].Name;
+            _prevRoomText.text = _currentRoomIndex == 0 ? "EXIT" : CurrentLevelRooms[_currentRoomIndex - 1].Name;
             _nextRoomText.text = _currentRoomIndex == CurrentLevelRooms.Count - 1 ? "" : CurrentLevelRooms[_currentRoomIndex + 1].Name;
             foreach (Transform t in _roomCardsRoot)
             {

@@ -17,83 +17,83 @@ MonoBehaviour:
   _moneyGoal: 82
   _timeLimit: 60
   _rooms:
-  - _name: Grand Entrance Hall
+  - _name: GRAND ENTRANCE HALL
     _background: {fileID: -1845935926, guid: efa1e4e54409e1844a7846e2480175f0, type: 3}
     _cards:
-    - _name: Priceless Statue
-      _artwork: {fileID: 21300000, guid: af55708aa45ca4ac180f40194110eaad, type: 3}
+    - _name: PRICELESS STATUE
+      _artwork: {fileID: -1836751942, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 2
       _money: 10
-    - _name: Gem-Encrusted Crown
-      _artwork: {fileID: 21300000, guid: 445d6f39ed6eb47559d25c855379c4be, type: 3}
+    - _name: GEM-ENCRUSTED CROWN
+      _artwork: {fileID: 1162422195, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 3
       _money: 12
-    - _name: Antique Tapestry
-      _artwork: {fileID: 21300000, guid: 3305be909c92e4b5b963d6d980b28a99, type: 3}
+    - _name: MASSIVE TOME
+      _artwork: {fileID: -1085998959, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 6
       _money: 10
-    - _name: Antique Pocket Watch
-      _artwork: {fileID: 21300000, guid: d61ffcada0abc482e9c66697a8dfc704, type: 3}
+    - _name: ANTIQUE POCKET WATCH
+      _artwork: {fileID: -1085998959, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 6
       _money: 10
-    - _name: Crystal Vase
-      _artwork: {fileID: 21300000, guid: 9fd969ad395db4e8eb66c3fedb7d6af1, type: 3}
+    - _name: CRYSTAL VASE
+      _artwork: {fileID: -395283777, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 3
       _money: 8
-  - _name: Egyptian Exhibit
+  - _name: EGYPTIAN EXHIBIT
     _background: {fileID: -1266459254, guid: efa1e4e54409e1844a7846e2480175f0, type: 3}
     _cards:
-    - _name: Ancient Sarcophagus
-      _artwork: {fileID: 0}
+    - _name: ANCIENT SACROPHAGUS
+      _artwork: {fileID: 1303055114, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 12
       _money: 30
-    - _name: Rare Hieroglyphics Tablet
-      _artwork: {fileID: 0}
+    - _name: RARE HIEROGLYPHS TABLET
+      _artwork: {fileID: -1340908924, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 3
       _money: 7
-    - _name: Golden Ankh
-      _artwork: {fileID: 0}
+    - _name: GOLDEN ANKH
+      _artwork: {fileID: 785484496, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 2
       _money: 9
-  - _name: Renaissance Art Gallery
+  - _name: RENAISSANCe ART GALLERY
     _background: {fileID: 2064312412, guid: efa1e4e54409e1844a7846e2480175f0, type: 3}
     _cards:
-    - _name: Masterpiece Painting
-      _artwork: {fileID: 0}
+    - _name: MASTERPIECE PAINTING
+      _artwork: {fileID: 698920535, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 6
       _money: 18
-    - _name: Ornate Gilded Frame
-      _artwork: {fileID: 0}
+    - _name: ORENATE GILDED FRAME
+      _artwork: {fileID: -1706288928, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 5
       _money: 15
-    - _name: Sculpted Marble Bust
-      _artwork: {fileID: 0}
+    - _name: SCULPTED MARBLE BUST
+      _artwork: {fileID: -1542690299, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 4
       _money: 14
-    - _name: Exquisite Crystal Chandelier
-      _artwork: {fileID: 0}
+    - _name: EXQUISITE CRYSTAL CHANDELIER
+      _artwork: {fileID: -1358280247, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 7
       _money: 21
-    - _name: Antique Coin
-      _artwork: {fileID: 0}
+    - _name: ANTIQUE COIN
+      _artwork: {fileID: -1840379787, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 1
       _money: 3
-  - _name: Scientific Discovery Wing
+  - _name: SCIENTIFIC DISCOVERY WING
     _background: {fileID: 1431167327, guid: efa1e4e54409e1844a7846e2480175f0, type: 3}
     _cards:
-    - _name: Leonardo's Notebook
-      _artwork: {fileID: 0}
+    - _name: LEONARDO'S NOTEBOOK
+      _artwork: {fileID: 344298978, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 1
       _money: 4
-    - _name: Vintage Astronomical Globe
-      _artwork: {fileID: 0}
+    - _name: VINTAGE ASTRONOMICAL GLOBE
+      _artwork: {fileID: -343548961, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 2
       _money: 5
-    - _name: Antique Microscope
-      _artwork: {fileID: 0}
+    - _name: ANTIQUE MICROSCOPE
+      _artwork: {fileID: 111341125, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 2
       _money: 4
-    - _name: Vintage Teapot
-      _artwork: {fileID: 0}
+    - _name: VINTAGE TEAPOT
+      _artwork: {fileID: 1527386711, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 2
       _money: 5
