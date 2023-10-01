@@ -18,30 +18,30 @@ MonoBehaviour:
   _timeLimit: 60
   _rooms:
   - _name: Grand Entrance Hall
-    _background: {fileID: 0}
+    _background: {fileID: -1845935926, guid: efa1e4e54409e1844a7846e2480175f0, type: 3}
     _cards:
     - _name: Priceless Statue
-      _artwork: {fileID: 0}
+      _artwork: {fileID: 21300000, guid: af55708aa45ca4ac180f40194110eaad, type: 3}
       _weight: 2
       _money: 10
     - _name: Gem-Encrusted Crown
-      _artwork: {fileID: 0}
+      _artwork: {fileID: 21300000, guid: 445d6f39ed6eb47559d25c855379c4be, type: 3}
       _weight: 3
       _money: 12
     - _name: Antique Tapestry
-      _artwork: {fileID: 0}
+      _artwork: {fileID: 21300000, guid: 3305be909c92e4b5b963d6d980b28a99, type: 3}
       _weight: 6
       _money: 10
     - _name: Antique Pocket Watch
-      _artwork: {fileID: 0}
+      _artwork: {fileID: 21300000, guid: d61ffcada0abc482e9c66697a8dfc704, type: 3}
       _weight: 6
       _money: 10
     - _name: Crystal Vase
-      _artwork: {fileID: 0}
+      _artwork: {fileID: 21300000, guid: 9fd969ad395db4e8eb66c3fedb7d6af1, type: 3}
       _weight: 3
       _money: 8
   - _name: Egyptian Exhibit
-    _background: {fileID: 0}
+    _background: {fileID: -1266459254, guid: efa1e4e54409e1844a7846e2480175f0, type: 3}
     _cards:
     - _name: Ancient Sarcophagus
       _artwork: {fileID: 0}
@@ -56,7 +56,7 @@ MonoBehaviour:
       _weight: 2
       _money: 9
   - _name: Renaissance Art Gallery
-    _background: {fileID: 0}
+    _background: {fileID: 2064312412, guid: efa1e4e54409e1844a7846e2480175f0, type: 3}
     _cards:
     - _name: Masterpiece Painting
       _artwork: {fileID: 0}
@@ -79,7 +79,7 @@ MonoBehaviour:
       _weight: 1
       _money: 3
   - _name: Scientific Discovery Wing
-    _background: {fileID: 0}
+    _background: {fileID: 1431167327, guid: efa1e4e54409e1844a7846e2480175f0, type: 3}
     _cards:
     - _name: Leonardo's Notebook
       _artwork: {fileID: 0}

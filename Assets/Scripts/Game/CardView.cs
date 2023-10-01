@@ -22,7 +22,8 @@ namespace Game
             Card = card;
             _nameText.text = card.Name;
             _weightText.text = $"{card.Weight}kg";
-            _moneyText.text = $"{card.Money}";
+            _moneyText.text = $"{card.Money}g";
+            _artwork.sprite = card.Artwork;
         }
 
         public void OnPointerClick(PointerEventData eventData)

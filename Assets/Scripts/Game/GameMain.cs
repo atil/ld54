@@ -164,7 +164,7 @@ namespace Game
                 return;
             }
 
-            PlayRoomChangeAnimation(_roomBackgrounLerpTargetRight, _roomBackgrounLerpTargetLeft);
+            PlayRoomChangeAnimation(_roomBackgrounLerpTargetRight, _roomBackgrounLerpTargetLeft, _currentRoomIndex - 1);
 
             _roomNameText.gameObject.SetActive(false);
             _roomCardsRoot.gameObject.SetActive(false);
@@ -184,7 +184,7 @@ namespace Game
 
         public void OnNextRoomClicked()
         {
-            PlayRoomChangeAnimation(_roomBackgrounLerpTargetLeft, _roomBackgrounLerpTargetRight);
+            PlayRoomChangeAnimation(_roomBackgrounLerpTargetLeft, _roomBackgrounLerpTargetRight, _currentRoomIndex + 1);
 
             _roomNameText.gameObject.SetActive(false);
             _roomCardsRoot.gameObject.SetActive(false);
@@ -202,7 +202,7 @@ namespace Game
             });
         }
 
-        private void PlayRoomChangeAnimation(Transform firstTip, Transform secondTip)
+        private void PlayRoomChangeAnimation(Transform firstTip, Transform secondTip, int targetRoomIndex)
         {
             Vector3 mid = _roomBackground.transform.position;
             Vector3 src = mid;
@@ -215,6 +215,7 @@ namespace Game
                 },
                 () =>
                 {
+                    _roomBackground.sprite = CurrentLevel.Rooms[targetRoomIndex].Background;
                     _roomBackground.CrossFadeAlpha(1, RoomChangeDuration / 2.0f, false);
                     src = secondTip.position;
                     target = mid;
