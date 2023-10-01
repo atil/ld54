@@ -17,6 +17,7 @@ namespace Game
         [SerializeField] private Button _clickToProceedButton;
 
         private Coroutine _showTextCoroutine;
+        private bool _isLoadingGame = false;
 
         private enum SplashState
         {
@@ -78,12 +79,13 @@ namespace Game
         public void OnClickedProceedButton()
         {
             _clickToProceedButton.interactable = false;
+            _isLoadingGame = true;
             FadeOut(null, () => SceneManager.LoadScene("Game"));
         }
 
         public void Update()
         {
-            if (_state == SplashState.Story && Input.anyKeyDown)
+            if (_state == SplashState.Story && Input.anyKeyDown && !_isLoadingGame)
             {
                 JamKit.Stop(_showTextCoroutine);
                 OnClickedProceedButton();

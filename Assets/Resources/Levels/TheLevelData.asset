@@ -29,7 +29,7 @@ MonoBehaviour:
       _weight: 3
       _money: 12
     - _name: MASSIVE TOME
-      _artwork: {fileID: -1085998959, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
+      _artwork: {fileID: -1191473999, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 6
       _money: 10
     - _name: ANTIQUE POCKET WATCH
@@ -55,7 +55,7 @@ MonoBehaviour:
       _artwork: {fileID: 785484496, guid: 1d43a474cbe1e42cca4103ae5e8b46e7, type: 3}
       _weight: 2
       _money: 9
-  - _name: RENAISSANCe ART GALLERY
+  - _name: RENAISSANCE ART GALLERY
     _background: {fileID: 2064312412, guid: efa1e4e54409e1844a7846e2480175f0, type: 3}
     _cards:
     - _name: MASTERPIECE PAINTING

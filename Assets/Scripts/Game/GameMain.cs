@@ -83,7 +83,7 @@ namespace Game
             }
 
             _levelNameText.text = $"{CurrentLevel.LevelName}";
-            _weightCapacityText.text = $"{CurrentLevel.BackpackCapacity}kg";
+            _weightCapacityText.text = $"{CurrentLevel.BackpackCapacity}";
             _moneyGoalText.text = $"{CurrentLevel.MoneyGoal}";
 
             SetWithRoom(_currentRoomIndex);
@@ -121,7 +121,7 @@ namespace Game
         private void SetStatus()
         {
             int newWeight = StatusWeight;
-            _weightCurrentText.text = $"{newWeight}kg";
+            _weightCurrentText.text = $"{newWeight}";
             _weightSlider.value = (float)newWeight / (float)CurrentLevel.BackpackCapacity;
 
             int newMoney = StatusMoney;
