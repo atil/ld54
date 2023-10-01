@@ -9,7 +9,7 @@ using UnityEngine.UI;
 namespace Game
 {
     public enum GameResultType
-    { 
+    {
         None,
         Success,
         FailUndervalue,
@@ -27,7 +27,9 @@ namespace Game
         [SerializeField] private TextMeshProUGUI _levelNameText;
         [SerializeField] private TextMeshProUGUI _roomNameText;
         [SerializeField] private Transform _roomCardsRoot;
+        [SerializeField] private GameObject _roomCardInvisible;
         [SerializeField] private Transform _handCardsRoot;
+        [SerializeField] private GameObject _handCardInvisible;
         [SerializeField] private Button _prevRoomButton;
         [SerializeField] private Button _nextRoomButton;
         [SerializeField] private TextMeshProUGUI _prevRoomText;
@@ -131,6 +133,8 @@ namespace Game
             _nextRoomText.text = _currentRoomIndex == CurrentLevelRooms.Count - 1 ? "" : CurrentLevelRooms[_currentRoomIndex + 1].Name;
             foreach (Transform t in _roomCardsRoot)
             {
+                if (t == _roomCardInvisible.transform) { continue; }
+
                 Destroy(t.gameObject);
             }
             _currentRoomCardViews.Clear();
@@ -217,7 +221,8 @@ namespace Game
 
                 _currentRoomCardViews.Remove(clickedCardView);
                 _handCardViews.Add(clickedCardView);
-                clickedCardView.transform.SetParent(_handCardsRoot);
+
+                MoveCardView(clickedCardView, _handCardsRoot, _handCardInvisible);
             }
             else // Putting down hand card
             {
@@ -231,10 +236,34 @@ namespace Game
                 _currentRoomCardViews.Add(clickedCardView);
                 _handCardViews.Remove(clickedCardView);
 
-                clickedCardView.transform.SetParent(_roomCardsRoot);
+                MoveCardView(clickedCardView, _roomCardsRoot, _roomCardInvisible);
             }
 
             SetStatus();
+        }
+
+        private void MoveCardView(CardView clickedCardView, Transform targetTransform, GameObject invisibleCard)
+        {
+            invisibleCard.SetActive(true);
+            invisibleCard.transform.SetAsLastSibling();
+            clickedCardView.transform.SetParent(_ui.transform);
+
+            _jamkit.RunDelayed(0.001f, () =>
+            {
+                Vector3 src = clickedCardView.transform.position;
+                Vector3 target = invisibleCard.transform.position;
+                const float TweenDuration = 0.3f;
+                _jamkit.Tween(AnimationCurve.EaseInOut(0, 0, 1, 1), TweenDuration,
+                    t =>
+                    {
+                        clickedCardView.transform.position = Vector3.Lerp(src, target, t);
+                    },
+                    () =>
+                    {
+                        invisibleCard.SetActive(false);
+                        clickedCardView.transform.SetParent(targetTransform);
+                    });
+            });
         }
 
         public void OnCardPointerEnter(CardData card)
