@@ -19,13 +19,45 @@ namespace Game
         private Coroutine _showTextCoroutine;
         private bool _isLoadingGame = false;
 
+        private string[] _storyLines = new[]
+        {
+            "a beautiful heist. full of opportunity.",
+            "have to reach a certain amount.",
+            "what's the point otherwise?",
+            "must pick carefully.",
+            "knapsack can carry only so much.",
+            "bother.",
+            "triggered the alarm. feds are on the way. gotta go fast."
+        };
+
+        private float[] _storyLineWaitDurations = new[]
+        {
+            1.0f,
+            1.0f,
+            1.0f,
+            1.0f,
+            4.0f,
+            0.5f,
+            0.5f,
+        };
+
+        private bool[] _storyLinesHasExtraNewlineAfter = new[]
+        {
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            false,
+        };
+
         private enum SplashState
         {
             Splash,
             Story
         }
         private SplashState _state = SplashState.Splash;
-        private string[] _storyLines;
 
         void Start()
         {
@@ -41,7 +73,6 @@ namespace Game
                 _state = SplashState.Story;
                 _splashItself.SetActive(false);
                 _storyRoot.SetActive(true);
-                _storyLines = _storyText.text.Split('\n');
                 _storyText.text = "";
                 FadeIn(null, () => ShowStoryText());
             });
@@ -57,20 +88,19 @@ namespace Game
             for (int i = 0; i < _storyLines.Length; i++)
             {
                 string line = _storyLines[i];
-                int waitDurationAfterLine = int.Parse(line[0].ToString());
-                string lineWithoutNumber = line.Substring(1, line.Length - 1);
-
-                foreach (char ch in lineWithoutNumber)
+                foreach (char ch in line)
                 {
                     _storyText.text += ch;
                     const float DurationPerChar = 0.025f;
                     yield return new WaitForSeconds(DurationPerChar);
                 }
-                yield return new WaitForSeconds(waitDurationAfterLine);
-                
+                yield return new WaitForSeconds(_storyLineWaitDurations[i]);
+
                 if (i != _storyLines.Length - 1)
                 {
-                    _storyText.text += "\n\n"; 
+                    _storyText.text += "\n";
+
+                    if (_storyLinesHasExtraNewlineAfter[i]) _storyText.text += "\n";
                 }
             }
             _clickToProceedButton.gameObject.SetActive(true);
