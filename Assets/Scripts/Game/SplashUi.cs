@@ -21,13 +21,13 @@ namespace Game
 
         private string[] _storyLines = new[]
         {
-            "a beautiful heist. full of opportunity.",
-            "have to reach a certain amount.",
-            "what's the point otherwise?",
-            "must pick carefully.",
-            "knapsack can carry only so much.",
-            "bother.",
-            "triggered the alarm. feds are on the way. gotta go fast."
+            "A BEAUTIFUL HEIST. FULL OF OPPORTUNITY.",
+            "HAVE TO REACH A CERTAIN AMOUNT.",
+            "WHAT'S THE POINT OTHERWISE?",
+            "MUST PICK CAREFULLY.",
+            "THE KNAPSACK CAN ONLY CARRY SO MUCH.",
+            "BOTHER.",
+            "TRIGGERED THE ALARM. FEDS ARE ON THE WAY. GOTTA GO FAST."
         };
 
         private float[] _storyLineWaitDurations = new[]

@@ -12,6 +12,7 @@ namespace Game
     {
         None,
         Success,
+        SuccessBest,
         FailUndervalue,
         FailPolice
     }
@@ -48,7 +49,7 @@ namespace Game
         [SerializeField] private TextMeshProUGUI _moneyCurrentText;
         [SerializeField] private Slider _moneySlider;
 
-        private int _currentLevelIndex;
+        private int _currentLevelIndex => 0;
         private GameLevelData CurrentLevel => _allLevels.Levels[_currentLevelIndex];
         private IReadOnlyList<Room> CurrentLevelRooms => CurrentLevel.Rooms;
 
@@ -70,13 +71,6 @@ namespace Game
         private void Start()
         {
             _jamkit.ChangeMusicTrack("MusicGame");
-            _currentLevelIndex = PlayerPrefs.GetInt("ld54_currentlevelindex", 0);
-
-            if (_currentLevelIndex >= _allLevels.Levels.Count)
-            {
-                Debug.LogError($"Current level index was erroneous ({_currentLevelIndex}), assigned zero");
-                _currentLevelIndex = 0;
-            }
 
             foreach (Room room in CurrentLevelRooms)
             {
@@ -104,9 +98,13 @@ namespace Game
             }
 
 #if UNITY_EDITOR
-            if (Input.GetKeyDown(KeyCode.J))
+            if (Input.GetKeyDown(KeyCode.H))
             {
                 EndGame(GameResultType.Success);
+            }
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                EndGame(GameResultType.SuccessBest);
             }
             if (Input.GetKeyDown(KeyCode.K))
             {
@@ -162,7 +160,15 @@ namespace Game
 
             if (_currentRoomIndex == 0)
             {
-                GameResultType result = StatusMoney >= CurrentLevel.MoneyGoal ? GameResultType.Success : GameResultType.FailUndervalue;
+                GameResultType result = GameResultType.Success;
+                if (StatusMoney >= CurrentLevel.MoneyGoal)
+                {
+                    result = StatusMoney == CurrentLevel.PossibleMoney ? GameResultType.SuccessBest : GameResultType.Success;
+                }
+                else
+                {
+                    result = GameResultType.FailUndervalue;
+                }
                 EndGame(result);
                 return;
             }

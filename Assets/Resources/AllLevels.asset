@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levels:
   - {fileID: 11400000, guid: ad7438ca2fba5a24faf1c388cf2eb162, type: 2}
-  _levelSuccesText: level success.
-  _levelFailUndervalueText: not nearly enough to worth my while
+  _levelSuccesText: THAT'S NOT BAD, BUT I'M <i>SURE</i> I CAN DO BETTER
+  _levelSuccesBestText: THAT WAS THE PERFECT HEIST! I'M PROUD OF YOU
+  _levelFailUndervalueText: NOT NEARLY ENOUGH TO WORTH MY WHILE
   _levelFailPoliceText: 'POLICE: <i>YOU''RE UNDER ARREST</i>'
   _gameWinText: oh yeah! look at them spoils. they'll all be jealous

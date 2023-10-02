@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _discreteTickInteval: 0.1
   _sceneTransitionParams:
-    _Color: {r: 0.47058824, g: 0.47058824, b: 0.47058824, a: 1}
+    _Color: {r: 0.31764707, g: 0.29803923, b: 0.2901961, a: 1}
     _Duration: 1
     _Curve:
       serializedVersion: 2

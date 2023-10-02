@@ -13,6 +13,9 @@ namespace Game
         [SerializeField, TextArea(2, 10)] private string _levelSuccesText;
         public string LevelSuccessText => _levelSuccesText;
 
+        [SerializeField, TextArea(2, 10)] private string _levelSuccesBestText;
+        public string LevelSuccessBestText => _levelSuccesBestText;
+
         [SerializeField, TextArea(2, 10)] private string _levelFailUndervalueText;
         public string LevelFailUndervalueText => _levelFailUndervalueText;
 

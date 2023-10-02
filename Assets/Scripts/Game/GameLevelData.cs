@@ -44,6 +44,9 @@ namespace Game
         [SerializeField] private int _moneyGoal;
         public int MoneyGoal => _moneyGoal;
 
+        [SerializeField] private int _possibleMoney;
+        public int PossibleMoney => _possibleMoney;
+
         [SerializeField] private int _timeLimit;
         public int TimeLimit => _timeLimit;
 
