@@ -12,6 +12,9 @@ namespace Game
 
         [SerializeField] private TextMeshProUGUI _resultText;
         [SerializeField] private GameLevels _allLevels;
+        [SerializeField] private Image _background;
+        [SerializeField] private Sprite _winSprite;
+        [SerializeField] private Sprite _failSprite;
 
         int _currentLevelIndex = 0;
         bool _hasWon = false;
@@ -31,6 +34,7 @@ namespace Game
                     break;
                 case GameResultType.Success:
                     _currentLevelIndex++;
+                    _background.sprite = _winSprite;
                     _hasWon = _currentLevelIndex == _allLevels.Levels.Count;
                     if (_hasWon)
                     {
@@ -43,9 +47,11 @@ namespace Game
 
                     break;
                 case GameResultType.FailUndervalue:
+                    _background.gameObject.SetActive(false);
                     _resultText.text = _allLevels.LevelFailUndervalueText;
                     break;
                 case GameResultType.FailPolice:
+                    _background.sprite = _failSprite;
                     _resultText.text = _allLevels.LevelFailPoliceText;
                     break;
             }
