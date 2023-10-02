@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hurry!
+  m_text: HURRY!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3283db84611a5a942a1d3831fd8573ce, type: 2}
   m_sharedMaterial: {fileID: -1864362649858255668, guid: 3283db84611a5a942a1d3831fd8573ce, type: 2}

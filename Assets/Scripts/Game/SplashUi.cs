@@ -36,7 +36,7 @@ namespace Game
             1.0f,
             1.0f,
             1.0f,
-            4.0f,
+            3.5f,
             0.5f,
             0.5f,
         };
@@ -111,14 +111,19 @@ namespace Game
             _clickToProceedButton.interactable = false;
             _isLoadingGame = true;
             FadeOut(null, () => SceneManager.LoadScene("Game"));
+            PlayerPrefs.SetInt("ld54_isfirstrun", 1);
         }
 
         public void Update()
         {
             if (_state == SplashState.Story && Input.anyKeyDown && !_isLoadingGame)
             {
-                JamKit.Stop(_showTextCoroutine);
-                OnClickedProceedButton();
+                bool isFirstRun = PlayerPrefs.GetInt("ld54_isfirstrun", 0) == 0;
+                if (!isFirstRun)
+                {
+                    JamKit.Stop(_showTextCoroutine);
+                    OnClickedProceedButton();
+                }
             }
         }
     }
