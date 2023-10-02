@@ -69,6 +69,7 @@ namespace Game
 
         private void Start()
         {
+            _jamkit.ChangeMusicTrack("MusicGame");
             _currentLevelIndex = PlayerPrefs.GetInt("ld54_currentlevelindex", 0);
 
             if (_currentLevelIndex >= _allLevels.Levels.Count)
@@ -157,6 +158,8 @@ namespace Game
 
         public void OnPrevRoomClicked()
         {
+            _jamkit.Play("ButtonClick");
+
             if (_currentRoomIndex == 0)
             {
                 GameResultType result = StatusMoney >= CurrentLevel.MoneyGoal ? GameResultType.Success : GameResultType.FailUndervalue;
@@ -184,6 +187,8 @@ namespace Game
 
         public void OnNextRoomClicked()
         {
+            _jamkit.Play("ButtonClick");
+
             PlayRoomChangeAnimation(_roomBackgrounLerpTargetLeft, _roomBackgrounLerpTargetRight, _currentRoomIndex + 1);
 
             _roomNameText.gameObject.SetActive(false);
@@ -239,9 +244,10 @@ namespace Game
             List<CardData> currentRoomCards = _currentLevelCards[_currentRoomIndex];
             if (currentRoomCards.Exists(x => x == card)) // Taking room card
             {
-                if (StatusWeight + card.Weight > CurrentLevel.BackpackCapacity)
+                bool isTooHeavy = StatusWeight + card.Weight > CurrentLevel.BackpackCapacity;
+                if (isTooHeavy)
                 {
-                    // Too heavy
+                    _jamkit.Play("TooHeavy");
                     _tooHeavyText.SetActive(true);
                     _isShowingTooHeavy = true;
                     _jamkit.RunDelayed(0.3f, () =>
@@ -251,6 +257,8 @@ namespace Game
                     });
                     return;
                 }
+
+                _jamkit.Play("Card1");
 
                 currentRoomCards.Remove(card);
                 _handCards.Add(card);
@@ -265,6 +273,8 @@ namespace Game
             }
             else // Putting down hand card
             {
+                _jamkit.Play("Card2");
+
                 Debug.Assert(_handCards.Exists(x => x == card));
                 currentRoomCards.Add(card);
                 _handCards.Remove(card);
@@ -319,6 +329,7 @@ namespace Game
         {
             _isGameRunning = false;
             float duration = _jamkit.Globals.SceneTransitionParams.Duration;
+            _jamkit.FadeOutMusic(duration - 0.05f);
             _ui.FadeOut();
             PlayerPrefs.SetInt("ld54_lastresulttype", (int)resultType);
             _jamkit.RunDelayed(duration, () =>

@@ -61,12 +61,14 @@ namespace Game
 
         void Start()
         {
+            JamKit.StartMusic("MusicIntro", false);
             Camera.backgroundColor = Globals.SplashSceneCameraBackgroundColor;
             FadeIn();
         }
 
         public void OnClickedPlayButton()
         {
+            JamKit.Play("ButtonClick");
             _playButton.interactable = false;
             FadeOut(null, () =>
             {
@@ -108,6 +110,8 @@ namespace Game
 
         public void OnClickedProceedButton()
         {
+            JamKit.Play("ButtonClick");
+            JamKit.FadeOutMusic(0.4f);
             _clickToProceedButton.interactable = false;
             _isLoadingGame = true;
             FadeOut(null, () => SceneManager.LoadScene("Game"));

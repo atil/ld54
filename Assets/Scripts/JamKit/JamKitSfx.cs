@@ -13,7 +13,7 @@ namespace JamKit
         [SerializeField] private SfxDatabase _database;
 
         private const float SfxVolume = 0.5f;
-        private const float MusicVolume = 0.5f;
+        private const float MusicVolume = 0.2f;
 
         private bool _isMusicPaused;
 

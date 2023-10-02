@@ -33,6 +33,7 @@ namespace Game
                     _resultText.text = "you broke it";
                     break;
                 case GameResultType.Success:
+                    JamKit.Play("Win");
                     _currentLevelIndex++;
                     _background.sprite = _winSprite;
                     _hasWon = _currentLevelIndex == _allLevels.Levels.Count;
@@ -47,10 +48,12 @@ namespace Game
 
                     break;
                 case GameResultType.FailUndervalue:
+                    JamKit.Play("Fail");
                     _background.gameObject.SetActive(false);
                     _resultText.text = _allLevels.LevelFailUndervalueText;
                     break;
                 case GameResultType.FailPolice:
+                    JamKit.Play("Fail");
                     _background.sprite = _failSprite;
                     _resultText.text = _allLevels.LevelFailPoliceText;
                     break;
@@ -62,7 +65,7 @@ namespace Game
         public void OnClickedPlayButton()
         {
             string nextSceneName = _hasWon ? "Splash" : "Game";
-
+            JamKit.Play("ButtonClick");
             _playButton.interactable = false;
             FadeOut(null, () => SceneManager.LoadScene(nextSceneName));
         }
